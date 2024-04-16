@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.msanalytics.R
 import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class EntryActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
