@@ -1,5 +1,9 @@
 package com.example.msanalytics.data.di
 
+import com.example.msanalytics.data.api.repository.AccountRepository
+import com.example.msanalytics.data.api.retrofit.backend.BackendApiService
+import com.example.msanalytics.data.api.retrofit.backend.BackendExternalDataSource
+import com.example.msanalytics.data.api.retrofit.backend.BackendRetrofitDataSource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -9,32 +13,18 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class RepositoryModule {
-    @Singleton
-    @Provides
-    fun providePostRepository(
-        /*cheapSharkExternalDataSource: CheapSharkExternalDataSource,*/
-        postLocalDataSource: PostLocalDataSource
-    ): PostRepository =
-        PostRepository(postLocalDataSource)
 
     @Singleton
     @Provides
-    fun provideSearchRepository(
-        rawgExternalDataSource: RawgExternalDataSource
-    ): SearchRepository =
-        SearchRepository(rawgExternalDataSource)
+    fun provideAccountRepository(
+        backendExternalDataSource: BackendExternalDataSource
+    ): AccountRepository =
+        AccountRepository(backendExternalDataSource)
 
     @Singleton
     @Provides
-    fun provideCheapSharkExternalDataSource(
-        apiService: CheapSharkApiService
-    ): CheapSharkExternalDataSource =
-        CheapSharkRetrofitDataSource(apiService)
-
-    @Singleton
-    @Provides
-    fun provideRawgExternalDataSource(
-        apiService: RawgApiService
-    ): RawgExternalDataSource =
-        RawgRetrofitDataSource(apiService)
+    fun provideBackendExternalDataSource(
+        apiService: BackendApiService
+    ): BackendExternalDataSource =
+        BackendRetrofitDataSource(apiService)
 }

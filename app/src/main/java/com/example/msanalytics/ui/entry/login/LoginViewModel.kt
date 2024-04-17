@@ -11,10 +11,12 @@ class LoginViewModel: ViewModel() {
         v.findNavController().navigate(R.id.regFragment)
     }
 
-    fun signInUser(
-        email: String,
-        password: String,
-        v: View
+    fun navToMain(v: View) {
+        v.findNavController().navigate(R.id.mainActivity)
+    }
+
+    fun signIn(
+        email: String, password: String, v: View
     ): Boolean {
         return true
     }

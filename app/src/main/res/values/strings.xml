@@ -5,7 +5,7 @@
     <string name="fragment_login__header">Войти с помощью\nпочты</string>
     <string name="email_edit_text">Email:</string>
     <string name="password_edit_text">Password:</string>
-    <string name="nickname_edit_text">Nickname:</string>
+    <string name="login_edit_text">Login:</string>
     <string name="fragment_login__first_button">Начать!</string>
     <string name="fragment_login__second_button">или зарегистрируйтесь</string>
     <string name="fragment_reg__header">Пройдите\nрегистрацию</string>

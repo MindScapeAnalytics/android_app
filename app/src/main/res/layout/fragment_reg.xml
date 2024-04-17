@@ -41,16 +41,16 @@
         app:layout_constraintEnd_toStartOf="@id/fragment_reg__end_edit_text_guideline"
         app:layout_constraintStart_toEndOf="@id/fragment_reg__start_edit_text_guideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/fragment_reg__nickname"
+        app:layout_constraintBottom_toTopOf="@id/fragment_reg__login"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintVertical_bias="0.60"/>
 
     <EditText
         style="@style/EditText"
-        android:id="@+id/fragment_reg__nickname"
+        android:id="@+id/fragment_reg__login"
         android:layout_width="0dp"
         android:layout_height="@dimen/_42sdp"
-        android:hint="@string/nickname_edit_text"
+        android:hint="@string/login_edit_text"
         android:paddingHorizontal="@dimen/_16sdp"
         android:layout_marginBottom="@dimen/_11sdp"
         app:layout_constraintEnd_toStartOf="@id/fragment_reg__end_edit_text_guideline"
@@ -68,7 +68,7 @@
         android:layout_marginBottom="@dimen/_11sdp"
         app:layout_constraintEnd_toStartOf="@id/fragment_reg__end_edit_text_guideline"
         app:layout_constraintStart_toEndOf="@id/fragment_reg__start_edit_text_guideline"
-        app:layout_constraintTop_toBottomOf="@id/fragment_reg__nickname"
+        app:layout_constraintTop_toBottomOf="@id/fragment_reg__login"
         app:layout_constraintBottom_toTopOf="@id/fragment_reg__password" />
 
     <EditText

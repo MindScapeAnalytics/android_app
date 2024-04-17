@@ -4,5 +4,5 @@ import com.example.msanalytics.data.api.retrofit.backend.models.BackendAccountMo
 import retrofit2.Response
 
 interface BackendExternalDataSource {
-    suspend fun createAccount(): Response<String>
+    suspend fun createAccount(accountModel: BackendAccountModel): Response<String>
 }

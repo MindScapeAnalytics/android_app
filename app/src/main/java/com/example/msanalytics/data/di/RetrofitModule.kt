@@ -1,5 +1,6 @@
 package com.example.msanalytics.data.di
 
+import com.example.msanalytics.data.api.retrofit.backend.BackendApiService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
@@ -47,4 +48,8 @@ class RetrofitModule {
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
     }
+
+    @Provides
+    fun provideBackendApiService(retrofit: Retrofit): BackendApiService =
+        retrofit.create(BackendApiService::class.java)
 }

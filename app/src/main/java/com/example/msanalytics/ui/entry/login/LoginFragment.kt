@@ -35,7 +35,7 @@ class LoginFragment : Fragment() {
                 )
             }
             */
-            findNavController().navigate(R.id.mainActivity)
+            viewModel.navToMain(binding.root)
         }
         return binding.root
     }

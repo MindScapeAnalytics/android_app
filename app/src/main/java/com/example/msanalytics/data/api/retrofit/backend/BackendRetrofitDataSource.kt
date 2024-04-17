@@ -7,9 +7,8 @@ import java.util.Objects
 
 class BackendRetrofitDataSource(
     private val apiService: BackendApiService,
-    private val accountModel: BackendAccountModel
 ): BackendExternalDataSource {
-    override suspend fun createAccount(): Response<String> {
+    override suspend fun createAccount(accountModel: BackendAccountModel): Response<String> {
         return apiService.createAccount(accountModel)
     }
 }
