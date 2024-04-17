@@ -41,13 +41,13 @@
         app:layout_constraintEnd_toStartOf="@id/fragment_login__end_edit_text_guideline"
         app:layout_constraintStart_toEndOf="@id/fragment_login__start_edit_text_guideline"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/fragment_login__email"
+        app:layout_constraintBottom_toTopOf="@id/fragment_login__login"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintVertical_bias="0.60"/>
 
     <EditText
         style="@style/EditText"
-        android:id="@+id/fragment_login__email"
+        android:id="@+id/fragment_login__login"
         android:layout_width="0dp"
         android:layout_height="@dimen/_42sdp"
         android:hint="@string/email_edit_text"
@@ -69,7 +69,7 @@
         app:layout_constraintBottom_toTopOf="@+id/fragment_login__horizontal_button_guideline"
         app:layout_constraintEnd_toStartOf="@id/fragment_login__end_edit_text_guideline"
         app:layout_constraintStart_toEndOf="@id/fragment_login__start_edit_text_guideline"
-        app:layout_constraintTop_toBottomOf="@id/fragment_login__email" />
+        app:layout_constraintTop_toBottomOf="@id/fragment_login__login" />
 
     <Button
         android:id="@+id/fragment_login__first_button"

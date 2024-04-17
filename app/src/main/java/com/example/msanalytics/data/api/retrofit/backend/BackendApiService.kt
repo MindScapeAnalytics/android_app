@@ -9,5 +9,7 @@ import retrofit2.http.POST
 interface BackendApiService {
     @POST("/api/v1/account")
     suspend fun createAccount(@Body backendAccountModel: BackendAccountModel): Response<String>
-    
+
+    @POST("/api/v1/account/token")
+    suspend fun getToken(@Body backendAccountModel: BackendAccountModel): Response<String>
 }

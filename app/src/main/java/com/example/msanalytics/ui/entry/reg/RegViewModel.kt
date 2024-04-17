@@ -21,7 +21,7 @@ class RegViewModel: ViewModel() {
         login: String, email: String, password: String, v: View
     ): Boolean {
         accountModel = BackendAccountModel(
-            email, login, password
+            login, email, password
         )
         viewModelScope.launch {
             val response = accountRepository.createAccount(accountModel)

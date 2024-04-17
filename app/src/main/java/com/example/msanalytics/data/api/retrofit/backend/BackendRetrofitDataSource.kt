@@ -11,4 +11,8 @@ class BackendRetrofitDataSource(
     override suspend fun createAccount(accountModel: BackendAccountModel): Response<String> {
         return apiService.createAccount(accountModel)
     }
+
+    override suspend fun getToken(accountModel: BackendAccountModel): Response<String> {
+        return apiService.getToken(accountModel)
+    }
 }

@@ -11,4 +11,8 @@ class AccountRepository constructor(
     suspend fun createAccount(accountModel: BackendAccountModel): Response<String> {
         return backendExternalDataSource.createAccount(accountModel)
     }
+
+    suspend fun getToken(accountModel: BackendAccountModel): Response<String> {
+        return backendExternalDataSource.getToken(accountModel)
+    }
 }
