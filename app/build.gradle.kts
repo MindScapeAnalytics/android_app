@@ -60,8 +60,8 @@ kapt {
 dependencies {
     val nav_version = "2.7.7"
     /*hilt*/
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-compiler:2.51.1")
 
     /*coroutines*/
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
@@ -86,6 +86,9 @@ dependencies {
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
+
+    /*circle image*/
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

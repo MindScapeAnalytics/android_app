@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class RegViewModel: ViewModel() {
+class RegViewModel @Inject constructor() : ViewModel() {
     @Inject lateinit var accountRepository: AccountRepository
     private lateinit var accountModel: BackendAccountModel
 

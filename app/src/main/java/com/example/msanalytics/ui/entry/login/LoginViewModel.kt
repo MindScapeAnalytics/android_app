@@ -12,9 +12,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel: ViewModel() {
-    @Inject
-    lateinit var accountRepository: AccountRepository
+class LoginViewModel @Inject constructor(): ViewModel() {
+    @Inject lateinit var accountRepository: AccountRepository
     private lateinit var accountModel: BackendAccountModel
     fun navToReg(v: View) {
         v.findNavController().navigate(R.id.regFragment)
