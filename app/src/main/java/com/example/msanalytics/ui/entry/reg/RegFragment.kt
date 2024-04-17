@@ -20,10 +20,10 @@ class RegFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentRegBinding.inflate(layoutInflater)
-        val inputLogin = binding.fragmentRegLogin.text.toString()
-        val inputEmail = binding.fragmentRegEmail.text.toString()
-        val inputPassword = binding.fragmentRegPassword.text.toString()
         binding.fragmentRegFirstButton.setOnClickListener() {
+            val inputLogin = binding.fragmentRegLogin.text.toString()
+            val inputEmail = binding.fragmentRegEmail.text.toString()
+            val inputPassword = binding.fragmentRegPassword.text.toString()
             if (inputPassword != "" && (inputEmail != "" || inputLogin != "")) {
                 viewModel.registration(
                     inputLogin, inputEmail, inputPassword, binding.root

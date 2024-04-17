@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/background">
+    android:background="@color/white">
 
     <ImageView
         android:id="@+id/fragment_event__header_image"
         android:layout_width="0dp"
         android:layout_height="@dimen/_150sdp"
-        app:srcCompat="@drawable/im_start"
-        android:scaleType="fitEnd"
+        app:srcCompat="@drawable/im_chess"
+        android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/fragment_event__header_info"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +23,8 @@
         android:id="@+id/fragment_event__header_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="@dimen/_20sdp"
+        app:layout_constraintBottom_toTopOf="@id/fragment_event__add_participants"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fragment_event__header_image">
@@ -43,8 +45,8 @@
                 android:id="@+id/fragment_event__event_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/rubik_regular"
-                android:textColor="@color/buttonTextLight"
+                android:fontFamily="@font/rubik_medium"
+                android:textColor="@color/colorTextDark"
                 android:text="chess"
                 android:textSize="@dimen/_20ssp" />
 
@@ -53,9 +55,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/rubik_regular"
-                android:textColor="@color/buttonTextLight"
+                android:textColor="@color/colorTextDark"
                 android:text="(Организуем мероприятие для игры в шахматы)"
-                android:textSize="@dimen/_17ssp"/>
+                android:textSize="@dimen/_12ssp"
+                android:paddingEnd="@dimen/_50sdp" />
         </LinearLayout>
 
         <LinearLayout
@@ -63,26 +66,83 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:gravity="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/fragment_event__header_text_info"
             app:layout_constraintBottom_toBottomOf="parent">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="@dimen/_50sdp"
-                android:layout_height="@dimen/_50sdp"/>
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:src="@drawable/im_avatar"/>
 
             <TextView
                 android:id="@+id/fragment_event__org_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/rubik_regular"
-                android:textColor="@color/buttonTextLight"
-                android:text="Даниил"
-                android:textSize="@dimen/_17ssp"/>
-
+                android:textColor="@color/colorTextDark"
+                android:text="Даниил\nДмитриевич"
+                android:textSize="@dimen/_12ssp"
+                android:gravity="center"/>
         </LinearLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment_event__add_participants"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingHorizontal="@dimen/_15sdp"
+        app:layout_constraintTop_toBottomOf="@id/fragment_event__header_info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/fragment_event__places_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik_medium"
+            android:textColor="@color/colorTextDark"
+            android:padding="5dp"
+            android:text="Места:"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/fragment_event__add_participant_button"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintVertical_chainStyle="packed"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/fragment_event__add_participant_button"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@id/fragment_event__places_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/fragment_event__add_participants_text"
+            app:layout_constraintHorizontal_bias="0"
+            android:src="@drawable/ic_add_circle"
+            app:layout_constraintHorizontal_chainStyle="packed"/>
+
+        <TextView
+            android:id="@+id/fragment_event__add_participants_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Вы можете забранировать себе место"
+            android:fontFamily="@font/rubik_regular"
+            android:textColor="@color/colorTextDark"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintTop_toTopOf="@id/fragment_event__add_participant_button"
+            app:layout_constraintBottom_toBottomOf="@id/fragment_event__add_participant_button"
+            app:layout_constraintStart_toEndOf="@id/fragment_event__add_participant_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

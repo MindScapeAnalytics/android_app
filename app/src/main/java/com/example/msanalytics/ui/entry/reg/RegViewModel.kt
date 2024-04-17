@@ -13,8 +13,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class RegViewModel @Inject constructor() : ViewModel() {
-    @Inject lateinit var accountRepository: AccountRepository
+class RegViewModel @Inject constructor(
+    private val accountRepository: AccountRepository
+): ViewModel() {
     private lateinit var accountModel: BackendAccountModel
 
     fun registration(

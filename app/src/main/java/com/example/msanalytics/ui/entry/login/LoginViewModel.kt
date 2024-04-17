@@ -12,8 +12,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel @Inject constructor(): ViewModel() {
-    @Inject lateinit var accountRepository: AccountRepository
+class LoginViewModel @Inject constructor(
+    private val accountRepository: AccountRepository
+): ViewModel() {
     private lateinit var accountModel: BackendAccountModel
     fun navToReg(v: View) {
         v.findNavController().navigate(R.id.regFragment)
@@ -23,11 +24,12 @@ class LoginViewModel @Inject constructor(): ViewModel() {
     ): Boolean {
         accountModel = if (android.util.Patterns.EMAIL_ADDRESS.matcher(login).matches()) {
             BackendAccountModel(
-                login, "", password,
+
+                "" ,login, password,
             )
         } else {
             BackendAccountModel(
-                "" ,login, password,
+                login, "", password,
             )
         }
         viewModelScope.launch {
