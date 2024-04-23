@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/swipeableFeedFragment">
+
+
+    <fragment
+        android:id="@+id/swipeableFeedFragment"
+        android:name="com.example.msanalytics.ui.main.swipeable_feed.SwipeableFeedFragment"
+        android:label="SwipeableFeedFragment"
+        tools:layout="@layout/fragment_swipeable_feed"/>
+</navigation>

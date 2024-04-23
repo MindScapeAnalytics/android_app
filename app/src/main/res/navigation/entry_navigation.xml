@@ -23,6 +23,12 @@
         <action
             android:id="@+id/action_loginFragment_to_regFragment"
             app:destination="@id/regFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_loginFragment_to_eventFragment"
+            app:destination="@id/eventFragment" />
     </fragment>
     <fragment
         android:id="@+id/regFragment"
@@ -37,6 +43,11 @@
         android:id="@+id/mainActivity"
         android:name="com.example.msanalytics.ui.main.MainActivity"
         android:label="MainActivity" />
+    <fragment
+        android:id="@+id/eventFragment"
+        android:name="com.example.msanalytics.ui.main.event.EventFragment"
+        android:label="EventFragment"
+        tools:layout="@layout/fragment_event"/>
 
 
 </navigation>

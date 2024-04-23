@@ -1,4 +1,7 @@
 package com.example.msanalytics.ui.main.swipeable_feed
 
-class SwipeableFeedViewModel {
+import androidx.lifecycle.ViewModel
+
+class SwipeableFeedViewModel: ViewModel(){
+
 }

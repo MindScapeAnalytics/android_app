@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
+import com.example.msanalytics.R
 import com.example.msanalytics.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 

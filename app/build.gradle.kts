@@ -57,6 +57,10 @@ kapt {
 }
 
 dependencies {
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.fragment.ktx)
     val nav_version = "2.7.7"
     /*hilt*/
     implementation("com.google.dagger:hilt-android:2.51.1")
