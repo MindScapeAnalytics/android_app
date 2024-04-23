@@ -1,40 +1,47 @@
 package com.example.msanalytics.ui.main.adapters
 
 import android.annotation.SuppressLint
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.graphics.scale
+import android.widget.ImageView
+import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.msanalytics.R
-import com.example.msanalytics.databinding.FragmentSwipeableFeedBinding
-import com.example.msanalytics.ui.main.swipeable_feed.SwipeableFeedFragment
+import com.example.msanalytics.databinding.ItemSwipeableFeedBinding
+import com.example.msanalytics.ui.main.models.SwipeableFeedModel
 import com.example.msanalytics.ui.main.swipeable_feed.SwipeableFeedViewModel
 
 
 class SwipeableAdapter (
-    private val binding: FragmentSwipeableFeedBinding,
-    private val swipeableFeedItems: List<SwipeableFeedViewModel>
+    private val swipeableFeedItems: List<SwipeableFeedModel>
 ) : RecyclerView.Adapter<SwipeableAdapter.ImageViewHolder>() {
 
-    class ImageViewHolder (
-        v: View, val binding: FragmentSwipeableFeedBinding
+    class ImageViewHolder constructor(
+        v: View
     ): RecyclerView.ViewHolder(v) {
-        fun setSwipeableFeedData(swipeableFeedData: SwipeableFeedViewModel) {
-            val imageBackground = binding.fragmentSwipeableFeedImage
-            val textTitle = binding.fragmentSwipeableFeedTitle
-            val textDescription = binding.fragmentSwipeableFeedDescription
-            val processBar = binding.fragmentSwipeableFeedProgressBar
-            val bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length)
-            imageBackground
-                .setImageBitmap(Bitmap.createScaledBitmap(
-                    bmp, imageBackground.width, imageBackground.height, false
-                ))
-            if (imageBackground.isAttachedToWindow) {
-                processBar.visibility = View.GONE
-            }
+        private var imageBackground: ImageView
+        private var textTitle: TextView
+        private var textDescription: TextView
+        private var processBar: ProgressBar
+        init {
+            imageBackground = v.findViewById(R.id.item_swipeable_feed__image)
+            textTitle = v.findViewById(R.id.item_swipeable_feed__title)
+            textDescription = v.findViewById(R.id.item_swipeable_feed__description)
+            processBar = v.findViewById(R.id.item_swipeable_feed__progress_bar)
+        }
+        fun setSwipeableFeedData(swipeableFeedData: SwipeableFeedModel) {
+            textTitle.text = swipeableFeedData.title
+            textDescription.text = swipeableFeedData.description
+//            val bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length)
+//            imageBackground
+//                .setImageBitmap(Bitmap.createScaledBitmap(
+//                    bmp, imageBackground.width, imageBackground.height, false
+//                ))
+//            if (imageBackground.isAttachedToWindow) {
+//                processBar.visibility = View.GONE
+//            }
         }
     }
 
@@ -42,8 +49,8 @@ class SwipeableAdapter (
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
         return ImageViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.id.fragment_swipeable_feed__image, parent
-            ), binding
+                R.layout.item_swipeable_feed, parent, false
+            )
         )
     }
 
@@ -52,6 +59,6 @@ class SwipeableAdapter (
     }
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        holder.setSwipeableFeedData(swipeableFeedItems.get(position))
+        holder.setSwipeableFeedData(swipeableFeedItems[position])
     }
 }
