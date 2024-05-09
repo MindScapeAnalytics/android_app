@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.msanalytics.R
 import com.example.msanalytics.databinding.ItemSwipeableFeedBinding
@@ -15,7 +16,8 @@ import com.example.msanalytics.ui.main.swipeable_feed.SwipeableFeedViewModel
 
 
 class SwipeableAdapter (
-    private val swipeableFeedItems: List<SwipeableFeedModel>
+    private val swipeableFeedItems: List<SwipeableFeedModel>,
+    private val v: View
 ) : RecyclerView.Adapter<SwipeableAdapter.ImageViewHolder>() {
 
     class ImageViewHolder constructor(
@@ -60,5 +62,9 @@ class SwipeableAdapter (
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         holder.setSwipeableFeedData(swipeableFeedItems[position])
+        holder.itemView.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.eventFragment)
+        }
     }
+
 }

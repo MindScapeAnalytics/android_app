@@ -16,23 +16,18 @@ import com.example.msanalytics.ui.main.models.SwipeableFeedModel
 
 class SwipeableFeedFragment : Fragment() {
     private lateinit var fragmentSwipeableFeedBinding: FragmentSwipeableFeedBinding
-    private lateinit var itemSwipeableFeedBinding: ItemSwipeableFeedBinding
     private val swipeableFeedItems = ArrayList<SwipeableFeedModel>()
     private val viewModel: SwipeableFeedViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val item1 = SwipeableFeedModel("hello","itismy", emptyArray())
-        swipeableFeedItems.add(item1)
-        val item2 = SwipeableFeedModel("hello1","itismy1", emptyArray())
-        swipeableFeedItems.add(item2)
-        val item3 = SwipeableFeedModel("hello2","itismy2", emptyArray())
-        swipeableFeedItems.add(item3)
-        itemSwipeableFeedBinding = ItemSwipeableFeedBinding.inflate(layoutInflater)
+        swipeableFeedItems.add(SwipeableFeedModel("hello","itismy", emptyArray()))
+        swipeableFeedItems.add(SwipeableFeedModel("hello1","itismy1", emptyArray()))
+        swipeableFeedItems.add(SwipeableFeedModel("hello2","itismy2", emptyArray()))
         fragmentSwipeableFeedBinding = FragmentSwipeableFeedBinding.inflate(layoutInflater)
         fragmentSwipeableFeedBinding.fragmentSwipeableFeedViewpage.adapter =
-            SwipeableAdapter(swipeableFeedItems)
+            SwipeableAdapter(swipeableFeedItems, fragmentSwipeableFeedBinding.root)
         return fragmentSwipeableFeedBinding.root
     }
 }

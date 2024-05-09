@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/item_event_participants__image"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/item_event_participants__text"
+        app:layout_constraintHorizontal_bias="0"
+        android:src="@drawable/im_avatar"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
+
+    <TextView
+        android:id="@+id/item_event_participants__text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Даниил Крицин"
+        android:fontFamily="@font/rubik_regular"
+        android:textColor="@color/colorTextDark"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintTop_toTopOf="@id/item_event_participants__image"
+        app:layout_constraintBottom_toBottomOf="@id/item_event_participants__image"
+        app:layout_constraintStart_toEndOf="@id/item_event_participants__image"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

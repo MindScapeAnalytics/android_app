@@ -10,5 +10,14 @@
         android:id="@+id/swipeableFeedFragment"
         android:name="com.example.msanalytics.ui.main.swipeable_feed.SwipeableFeedFragment"
         android:label="SwipeableFeedFragment"
-        tools:layout="@layout/fragment_swipeable_feed"/>
+        tools:layout="@layout/fragment_swipeable_feed">
+        <action
+            android:id="@+id/action_swipeableFeedFragment_to_eventFragment"
+            app:destination="@id/eventFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventFragment"
+        android:name="com.example.msanalytics.ui.main.event.EventFragment"
+        android:label="fragment_event"
+        tools:layout="@layout/fragment_event" />
 </navigation>
