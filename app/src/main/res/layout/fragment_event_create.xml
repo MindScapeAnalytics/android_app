@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.main.event.EventCreateFragment">
+    <LinearLayout
+        android:id="@+id/fragment_event_create__coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fragment_event_create__main"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/background" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/fragment_event_create__main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/fragment_event_create__save_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_event_create__coordinatorLayout"
+        android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fragment_event_create__header_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_20sdp">
+
+            <LinearLayout
+                android:id="@+id/fragment_event_create__header_text_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintVertical_bias="0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread_inside">
+
+                <EditText
+                    android:id="@+id/fragment_event_create__event_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubik_medium"
+                    android:textColor="@color/colorTextDark"
+                    android:hint="Название"
+                    android:background="#FFFFFF"
+                    android:textSize="@dimen/_20ssp" />
+
+                <EditText
+                    android:id="@+id/fragment_event_create__event_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="15dp"
+                    android:fontFamily="@font/rubik_regular"
+                    android:textColor="@color/colorTextDark"
+                    android:hint="Описание"
+                    android:background="#FFFFFF"
+                    android:textSize="@dimen/_12ssp"
+                    android:paddingEnd="@dimen/_8sdp" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+    <Button
+        android:id="@+id/fragment_event_create__save_button"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_37sdp"
+        style="@style/Button"
+        android:text="Создать"
+        android:textColor="@color/colorTextLight"
+        android:backgroundTint="@color/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/_15sdp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,6 +27,7 @@
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.ALTERNATIVE"/>
                 <data
                     android:scheme="http"
                     android:host="rf.msanalytics"/>

@@ -32,7 +32,7 @@ class EventAdapter (
     class EventAddParticipantsViewHolder constructor(
         v: View
     ): RecyclerView.ViewHolder(v) {
-        private var imageButton: ImageButton
+        private var imageButton: ImageView
         private var textDescription: TextView
         init {
             imageButton = v.findViewById(R.id.item_event_add_participants__button)
@@ -40,7 +40,7 @@ class EventAdapter (
         }
         fun setEventAddParticipantsFeedData() {
             imageButton.setImageResource(R.drawable.ic_add_circle)
-            textDescription.text = "Вы можете забранировать себе место"
+            textDescription.text = "Вы можете забронировать себе место"
         }
     }
 
@@ -48,9 +48,9 @@ class EventAdapter (
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
             EventParticipantsFeedModel().FIRST_TYPE -> EventAddParticipantsViewHolder (
-                    LayoutInflater.from(parent.context).inflate(
-                        R.layout.item_event_add_participants, parent, false
-                    )
+                LayoutInflater.from(parent.context).inflate(
+                    R.layout.item_event_add_participants, parent, false
+                )
             )
             EventParticipantsFeedModel().SECOND_TYPE -> EventParticipantsViewHolder(
                 LayoutInflater.from(parent.context).inflate(
@@ -75,7 +75,7 @@ class EventAdapter (
                 (holder as EventAddParticipantsViewHolder).setEventAddParticipantsFeedData()
             }
             EventParticipantsFeedModel().SECOND_TYPE -> {
-                (holder as EventParticipantsViewHolder).setEventParticipantsFeedData(eventParticipantsFeedItems[position + 1])
+                (holder as EventParticipantsViewHolder).setEventParticipantsFeedData(eventParticipantsFeedItems[position])
             }
         }
     }

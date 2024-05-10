@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.main.profile.ProfileFragment"
+    android:background="@color/white">
+
+    <FrameLayout
+        android:id="@+id/fragment_profile__header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fragment_profile__info_layout">
+        <ImageView
+            android:id="@+id/fragment_profile__header_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/im_avatar"
+            android:scaleType="centerCrop"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_profile__info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_20sdp"
+        app:layout_constraintTop_toBottomOf="@id/fragment_profile__header_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="start|center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/fragment_profile__nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Крицин Даниил"
+                android:textColor="@color/colorTextDark"
+                android:fontFamily="@font/rubik_medium"
+                android:textSize="21sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubik_regular"
+                android:text="Добавьте информацию о себе"
+                android:textColor="@color/colorTextGray"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

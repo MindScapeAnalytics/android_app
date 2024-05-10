@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.msanalytics.R
 import com.example.msanalytics.databinding.FragmentEventBinding
 import com.example.msanalytics.databinding.FragmentSwipeableFeedBinding
@@ -29,6 +30,8 @@ class EventFragment : Fragment() {
         eventParticipantsFeedItems.add(EventParticipantsFeedModel(emptyArray(), "Хазов Семён", EventParticipantsFeedModel().SECOND_TYPE))
         eventParticipantsFeedItems.add(EventParticipantsFeedModel(emptyArray(), "Казакова Полина", EventParticipantsFeedModel().SECOND_TYPE))
         fragmentEventBinding = FragmentEventBinding.inflate(layoutInflater)
+        fragmentEventBinding.fragmentEventPlacesRecycler.layoutManager =
+            LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         fragmentEventBinding.fragmentEventPlacesRecycler.adapter =
             EventAdapter(eventParticipantsFeedItems)
         return fragmentEventBinding.root

@@ -102,9 +102,9 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/fragment_event__add_participants"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="@dimen/_15sdp"
-            android:paddingVertical="@dimen/_10sdp"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingTop="@dimen/_10sdp"
             app:layout_constraintTop_toBottomOf="@id/fragment_event__header_info"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -129,7 +129,9 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:clipToPadding="false"
+                android:paddingTop="@dimen/_5sdp"
                 android:id="@+id/fragment_event__places_recycler"
                 app:layout_constraintTop_toBottomOf="@id/fragment_event__places_text"
                 app:layout_constraintStart_toStartOf="parent"
