@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:gravity="center">
+    <TextView
+        android:id="@+id/item_testing__text_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Хотели бы вы выпрыгнуть из окна?"
+        android:textColor="@color/colorTextLight"
+        android:gravity="center"
+        android:fontFamily="@font/rubik_medium"
+        android:textSize="@dimen/_16ssp"
+        android:padding="@dimen/_20sdp"/>
+    <FrameLayout
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimaryLight" />
+</LinearLayout>

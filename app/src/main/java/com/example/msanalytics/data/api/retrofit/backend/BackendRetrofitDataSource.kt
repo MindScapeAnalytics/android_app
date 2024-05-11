@@ -1,9 +1,9 @@
 package com.example.msanalytics.data.api.retrofit.backend
 
 import com.example.msanalytics.data.api.retrofit.backend.models.BackendAccountModel
-import okhttp3.Request
+import com.example.msanalytics.data.api.retrofit.backend.models.BackendAnswerModel
+import com.example.msanalytics.data.api.retrofit.backend.models.BackendQuestionModel
 import retrofit2.Response
-import java.util.Objects
 
 class BackendRetrofitDataSource(
     private val apiService: BackendApiService,
@@ -14,5 +14,13 @@ class BackendRetrofitDataSource(
 
     override suspend fun getToken(accountModel: BackendAccountModel): Response<String> {
         return apiService.getToken(accountModel)
+    }
+
+    override suspend fun getQuestions(): Response<BackendQuestionModel> {
+        return apiService.getQuestions()
+    }
+
+    override suspend fun sendAnswers(answerModel: BackendAnswerModel): Response<String> {
+        return apiService.sendAnswers(answerModel)
     }
 }

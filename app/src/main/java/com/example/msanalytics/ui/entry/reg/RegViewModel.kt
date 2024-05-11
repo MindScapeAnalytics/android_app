@@ -27,7 +27,7 @@ class RegViewModel @Inject constructor(
         viewModelScope.launch {
             val response = accountRepository.createAccount(accountModel)
             if (response.isSuccessful) {
-                v.findNavController().navigate(R.id.mainActivity)
+                v.findNavController().navigate(R.id.testingFragment)
             }
         }
         return (true)

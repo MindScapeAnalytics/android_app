@@ -1,6 +1,7 @@
 package com.example.msanalytics.data.di
 
 import com.example.msanalytics.data.api.repository.AccountRepository
+import com.example.msanalytics.data.api.repository.QuestionRepository
 import com.example.msanalytics.data.api.retrofit.backend.BackendApiService
 import com.example.msanalytics.data.api.retrofit.backend.BackendExternalDataSource
 import com.example.msanalytics.data.api.retrofit.backend.BackendRetrofitDataSource
@@ -20,6 +21,13 @@ class RepositoryModule {
         backendExternalDataSource: BackendExternalDataSource
     ): AccountRepository =
         AccountRepository(backendExternalDataSource)
+
+    @Singleton
+    @Provides
+    fun provideTestingRepository(
+        backendExternalDataSource: BackendExternalDataSource
+    ): QuestionRepository =
+        QuestionRepository(backendExternalDataSource)
 
     @Singleton
     @Provides

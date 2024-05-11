@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.entry.testing.QuestionFeedFragment"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/fragment_question_feed__title"
+        android:padding="@dimen/_20sdp"
+        android:fontFamily="@font/rubik_medium"
+        android:textSize="@dimen/_16ssp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Пройдите тест для определения ваших когнитивных особенностей:"
+        android:textColor="@color/colorTextLight"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fragment_question_feed__question_list"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_question_feed__question_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/fragment_question_feed__title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fragment_question_feed__save_button"
+        android:orientation="vertical"
+        tools:listitem="@layout/item_testing" />
+
+    <Button
+        android:id="@+id/fragment_question_feed__save_button"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_37sdp"
+        style="@style/Button"
+        android:text="Создать"
+        android:textColor="@color/colorTextLight"
+        android:backgroundTint="@color/colorPrimaryLight"
+        app:layout_constraintTop_toBottomOf="@id/fragment_question_feed__question_list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginVertical="@dimen/_15sdp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
