@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.entry.testing.QuestionFeedFragment"
+    tools:context=".ui.entry.question.QuestionFeedFragment"
     android:background="@color/background">
 
     <TextView
@@ -28,22 +28,8 @@
         app:layout_constraintTop_toBottomOf="@id/fragment_question_feed__title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/fragment_question_feed__save_button"
-        android:orientation="vertical"
-        tools:listitem="@layout/item_testing" />
-
-    <Button
-        android:id="@+id/fragment_question_feed__save_button"
-        android:layout_width="@dimen/_200sdp"
-        android:layout_height="@dimen/_37sdp"
-        style="@style/Button"
-        android:text="Создать"
-        android:textColor="@color/colorTextLight"
-        android:backgroundTint="@color/colorPrimaryLight"
-        app:layout_constraintTop_toBottomOf="@id/fragment_question_feed__question_list"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginVertical="@dimen/_15sdp" />
+        android:orientation="vertical"
+        tools:listitem="@layout/item_question_feed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

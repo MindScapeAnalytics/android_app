@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.findNavController
 import com.example.msanalytics.R
-import com.example.msanalytics.data.api.repository.AccountRepository
+import com.example.msanalytics.data.repository.AccountRepository
 import com.example.msanalytics.data.api.retrofit.backend.models.BackendAccountModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

@@ -1,6 +1,6 @@
 package com.example.msanalytics.ui.entry.adapters
 
-interface QuestionItemTouchHelperAdapter {
+interface QuestionTouchHelperAdapter {
     fun onItemMove(fromPosition: Int, toPosition: Int)
     fun onItemDismiss(position: Int)
     fun onItemSwipeLeft(position: Int)

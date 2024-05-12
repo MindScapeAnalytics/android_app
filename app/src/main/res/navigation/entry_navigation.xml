@@ -42,7 +42,7 @@
         android:label="MainActivity" />
     <fragment
         android:id="@+id/testingFragment"
-        android:name="com.example.msanalytics.ui.entry.testing.QuestionFeedFragment"
+        android:name="com.example.msanalytics.ui.entry.question.QuestionFeedFragment"
         android:label="fragment_testing"
         tools:layout="@layout/fragment_question_feed" >
         <action

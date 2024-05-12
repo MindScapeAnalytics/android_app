@@ -3,8 +3,8 @@ package com.example.msanalytics.ui.entry.adapters
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 
-class QuestionItemTouchHelperCallback constructor(
-    private val adapter: QuestionItemTouchHelperAdapter
+class ItemTouchHelperCallback constructor(
+    private val adapter: QuestionTouchHelperAdapter
 ): ItemTouchHelper.Callback() {
     override fun getMovementFlags(
         recyclerView: RecyclerView,

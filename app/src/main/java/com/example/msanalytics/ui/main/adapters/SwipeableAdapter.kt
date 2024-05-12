@@ -10,16 +10,19 @@ import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.msanalytics.R
-import com.example.msanalytics.databinding.ItemSwipeableFeedBinding
+import com.example.msanalytics.data.api.retrofit.backend.models.serialization.SerializationService
+import com.example.msanalytics.data.repository.EventRepository
 import com.example.msanalytics.ui.main.models.SwipeableFeedModel
-import com.example.msanalytics.ui.main.swipeable_feed.SwipeableFeedViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
 
 
 class SwipeableAdapter (
-    private val swipeableFeedItems: List<SwipeableFeedModel>,
     private val v: View
 ) : RecyclerView.Adapter<SwipeableAdapter.ImageViewHolder>() {
-
+    private var swipeableFeedItems: List<SwipeableFeedModel> = ArrayList()
     class ImageViewHolder constructor(
         v: View
     ): RecyclerView.ViewHolder(v) {
@@ -36,14 +39,14 @@ class SwipeableAdapter (
         fun setSwipeableFeedData(swipeableFeedData: SwipeableFeedModel) {
             textTitle.text = swipeableFeedData.title
             textDescription.text = swipeableFeedData.description
-//            val bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length)
-//            imageBackground
-//                .setImageBitmap(Bitmap.createScaledBitmap(
-//                    bmp, imageBackground.width, imageBackground.height, false
-//                ))
-//            if (imageBackground.isAttachedToWindow) {
-//                processBar.visibility = View.GONE
-//            }
+            /*val bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length)
+            imageBackground
+                .setImageBitmap(Bitmap.createScaledBitmap(
+                    bmp, imageBackground.width, imageBackground.height, false
+                ))
+            if (imageBackground.isAttachedToWindow) {
+                processBar.visibility = View.GONE
+            }*/
         }
     }
 
@@ -56,12 +59,26 @@ class SwipeableAdapter (
         )
     }
 
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateAdapterData(newEventList: ArrayList<SwipeableFeedModel>) {
+        swipeableFeedItems = newEventList; notifyDataSetChanged()
+    }
+
     override fun getItemCount(): Int {
         return swipeableFeedItems.size
     }
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         holder.setSwipeableFeedData(swipeableFeedItems[position])
+        /*if (swipeableFeedItems[position] == swipeableFeedItems.last()) {
+            CoroutineScope(Dispatchers.Main + SupervisorJob()).launch {
+                updateAdapterData(
+                    SerializationService()
+                        .backendEventModelToSwipeableFeedModelList(
+                            repository.getEvents().body()
+                        ))
+            }
+        }*/
         holder.itemView.setOnClickListener { view ->
             view.findNavController().navigate(R.id.eventFragment)
         }

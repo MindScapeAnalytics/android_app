@@ -29,8 +29,8 @@ class LoginFragment : Fragment() {
             val inputLogin = binding.fragmentLoginLogin.text.toString()
             val inputPassword = binding.fragmentLoginPassword.text.toString()
             if (inputLogin != "" && inputPassword != "") {
-//                viewModel.navToMain(inputLogin, inputPassword, binding.root)
-                binding.root.findNavController().navigate(R.id.mainActivity)
+                viewModel.navToMain(inputLogin, inputPassword, binding.root)
+                /*binding.root.findNavController().navigate(R.id.mainActivity)*/
             }
         }
         return binding.root

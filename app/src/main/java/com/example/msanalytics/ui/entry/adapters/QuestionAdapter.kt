@@ -5,16 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.msanalytics.R
 import com.example.msanalytics.ui.entry.models.QuestionFeedModel
 
 class QuestionAdapter(
-    private var _questions: MutableLiveData<ArrayList<QuestionFeedModel>>,
+    private var _answers: MutableLiveData<ArrayList<QuestionFeedModel>>,
     private var master: ArrayList<QuestionFeedModel>
-): RecyclerView.Adapter<QuestionAdapter.QuestionViewHolder>(), QuestionItemTouchHelperAdapter  {
+): RecyclerView.Adapter<QuestionAdapter.QuestionViewHolder>(), QuestionTouchHelperAdapter  {
     private var questions: ArrayList<QuestionFeedModel> = ArrayList()
     private var answers: ArrayList<QuestionFeedModel> = ArrayList()
     class QuestionViewHolder constructor(
@@ -33,7 +32,7 @@ class QuestionAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QuestionViewHolder {
         return QuestionViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.item_testing, parent, false
+                R.layout.item_question_feed, parent, false
             )
         )
     }
@@ -76,7 +75,7 @@ class QuestionAdapter(
         questions.removeAt(position)
         notifyItemRemoved(position); notifyDataSetChanged()
         if (questions.size == 0) {
-            _questions.postValue(answers)
+            _answers.postValue(answers)
         }
     }
 
@@ -97,7 +96,7 @@ class QuestionAdapter(
         questions.removeAt(position)
         notifyItemRemoved(position); notifyDataSetChanged()
         if (questions.size == 0) {
-            _questions.postValue(answers)
+            _answers.postValue(answers)
         }
     }
 }
