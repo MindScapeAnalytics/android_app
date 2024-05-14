@@ -16,7 +16,7 @@ class EventRepository(
         return backendExternalDataSource.createEvent(token, backendEventModel)
     }
 
-    suspend fun getEvent(token: String, id: String): Response<BackendEventModel> {
+    suspend fun getEvent(token: String, id: String): Response<BackendEventsModel> {
         return backendExternalDataSource.getEvent(token, id)
     }
 }

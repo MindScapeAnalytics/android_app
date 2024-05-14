@@ -15,5 +15,5 @@ interface BackendExternalDataSource {
     suspend fun sendAnswers(token: String, answerModel: BackendAnswerModel): Response<String>
     suspend fun getEvents(token: String): Response<List<BackendEventsModel>>
     suspend fun createEvent(token: String, backendEventModel: BackendEventModel): Response<String>
-    suspend fun getEvent(token: String, id: String): Response<BackendEventModel>
+    suspend fun getEvent(token: String, id: String): Response<BackendEventsModel>
 }

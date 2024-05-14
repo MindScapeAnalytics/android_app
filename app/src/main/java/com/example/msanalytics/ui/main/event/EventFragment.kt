@@ -40,7 +40,7 @@ class EventFragment : Fragment() {
         viewModel.event.observe(viewLifecycleOwner) {
             fragmentEventBinding.fragmentEventEventName.text = it.name
             fragmentEventBinding.fragmentEventEventCategory.text = it.description
-            fragmentEventBinding.fragmentEventHeaderImage.setImageBitmap(Converter().StringToBitMap(it.data))
+            fragmentEventBinding.fragmentEventHeaderImage.setImageBitmap(Converter().stringToBitMap(it.data))
         }
 
         fragmentEventBinding.fragmentEventPlacesRecycler.layoutManager =

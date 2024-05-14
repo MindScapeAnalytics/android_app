@@ -19,7 +19,7 @@ class Converter {
      * @param encodedString
      * @return bitmap (from given string)
      */
-    fun StringToBitMap(encodedString: String?): Bitmap? {
+    fun stringToBitMap(encodedString: String?): Bitmap? {
         return try {
             val encodeByte = Base64.decode(encodedString!!, Base64.DEFAULT)
             BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.size)

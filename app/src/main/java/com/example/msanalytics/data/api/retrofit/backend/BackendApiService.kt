@@ -42,5 +42,5 @@ interface BackendApiService {
     suspend fun getEvent(
         @Header("Authorization") token: String,
         @Path("id") id: String
-    ): Response<BackendEventModel>
+    ): Response<BackendEventsModel>
 }

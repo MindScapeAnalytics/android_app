@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.msanalytics.data.api.retrofit.backend.models.BackendEventModel
+import com.example.msanalytics.data.api.retrofit.backend.models.BackendEventsModel
 import com.example.msanalytics.data.api.retrofit.backend.models.serialization.SerializationService
 import com.example.msanalytics.data.repository.AccountRepository
 import com.example.msanalytics.data.repository.EventRepository
@@ -18,8 +19,8 @@ class EventViewModel @Inject constructor(
     private val eventRepository: EventRepository,
     private val accountRepository: AccountRepository
 ) : ViewModel() {
-    private val _event: MutableLiveData<BackendEventModel> = MutableLiveData()
-    val event: LiveData<BackendEventModel> get() = _event
+    private val _event: MutableLiveData<BackendEventsModel> = MutableLiveData()
+    val event: LiveData<BackendEventsModel> get() = _event
 
     fun getEventData(
         id: String

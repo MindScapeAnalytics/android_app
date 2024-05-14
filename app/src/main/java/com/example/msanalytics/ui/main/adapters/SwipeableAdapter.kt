@@ -44,11 +44,7 @@ class SwipeableAdapter (
             textDescription.text = swipeableFeedData.description
             imageBackground
                 .setImageBitmap(
-                    Converter().StringToBitMap(swipeableFeedData.image)?.let {
-                        Bitmap.createScaledBitmap(
-                            it, imageBackground.width, imageBackground.height, false
-                        )
-                    }
+                    Converter().stringToBitMap(swipeableFeedData.image)
                 )
             if (imageBackground.isAttachedToWindow) {
                 processBar.visibility = View.GONE

@@ -19,7 +19,6 @@
             android:id="@+id/fragment_event__header_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/im_chess"
             android:scaleType="centerCrop"
             app:layout_constraintVertical_bias="0"
             app:layout_constraintVertical_chainStyle="packed"/>
@@ -57,7 +56,6 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/rubik_medium"
                     android:textColor="@color/colorTextDark"
-                    android:text="chess"
                     android:textSize="@dimen/_20ssp" />
 
                 <TextView
@@ -66,7 +64,6 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/rubik_regular"
                     android:textColor="@color/colorTextDark"
-                    android:text="(Организуем мероприятие для игры в шахматы)"
                     android:textSize="@dimen/_12ssp"
                     android:paddingEnd="@dimen/_50sdp" />
             </LinearLayout>

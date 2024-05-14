@@ -41,7 +41,7 @@ class BackendRetrofitDataSource(
     override suspend fun getEvent(
         token: String,
         id: String
-    ): Response<BackendEventModel> {
+    ): Response<BackendEventsModel> {
         return apiService.getEvent(token, id)
     }
 
