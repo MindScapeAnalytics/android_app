@@ -11,6 +11,7 @@ import com.example.msanalytics.ui.main.adapters.SwipeableAdapter
 import com.example.msanalytics.ui.main.models.SwipeableFeedModel
 import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SwipeableFeedFragment : Fragment() {
     private lateinit var fragmentSwipeableFeedBinding: FragmentSwipeableFeedBinding
     private val viewModel: SwipeableFeedViewModel by viewModels()

@@ -17,6 +17,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintVertical_bias="0">
+        <ImageView
+            android:id="@+id/fragment_event_create__image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:src="@drawable/im_chess"
+            android:scaleType="centerCrop" />
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="3dp"

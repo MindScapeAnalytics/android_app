@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.msanalytics.data.repository.QuestionRepository
 import com.example.msanalytics.data.api.retrofit.backend.models.serialization.SerializationService
+import com.example.msanalytics.data.repository.AccountRepository
 import com.example.msanalytics.data.repository.EventRepository
 import com.example.msanalytics.ui.entry.models.QuestionFeedModel
 import com.example.msanalytics.ui.main.models.SwipeableFeedModel
@@ -15,7 +16,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SwipeableFeedViewModel @Inject constructor(
-    private val eventRepository: EventRepository
+    private val eventRepository: EventRepository,
+    private val accountRepository: AccountRepository
 ): ViewModel(){
     private val _eventList: MutableLiveData<ArrayList<SwipeableFeedModel>> = MutableLiveData()
     val eventList: LiveData<ArrayList<SwipeableFeedModel>> get() = _eventList
@@ -23,7 +25,12 @@ class SwipeableFeedViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             _eventList.postValue(
-                TODO("add repository")
+                SerializationService()
+                    .backendEventModelListToSwipeableFeedModelList(
+                    eventRepository.getEvents(
+                        "Bearer " + accountRepository.getTokenFromLocal()?.token
+                    ).body()
+                )
             )
         }
     }

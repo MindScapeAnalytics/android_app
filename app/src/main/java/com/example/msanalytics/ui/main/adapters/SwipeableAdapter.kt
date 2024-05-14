@@ -1,6 +1,8 @@
 package com.example.msanalytics.ui.main.adapters
 
 import android.annotation.SuppressLint
+import android.graphics.Bitmap
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.msanalytics.R
 import com.example.msanalytics.data.api.retrofit.backend.models.serialization.SerializationService
 import com.example.msanalytics.data.repository.EventRepository
+import com.example.msanalytics.ui.main.converters.Converter
 import com.example.msanalytics.ui.main.models.SwipeableFeedModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -39,14 +42,17 @@ class SwipeableAdapter (
         fun setSwipeableFeedData(swipeableFeedData: SwipeableFeedModel) {
             textTitle.text = swipeableFeedData.title
             textDescription.text = swipeableFeedData.description
-            /*val bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length)
             imageBackground
-                .setImageBitmap(Bitmap.createScaledBitmap(
-                    bmp, imageBackground.width, imageBackground.height, false
-                ))
+                .setImageBitmap(
+                    Converter().StringToBitMap(swipeableFeedData.image)?.let {
+                        Bitmap.createScaledBitmap(
+                            it, imageBackground.width, imageBackground.height, false
+                        )
+                    }
+                )
             if (imageBackground.isAttachedToWindow) {
                 processBar.visibility = View.GONE
-            }*/
+            }
         }
     }
 
@@ -80,7 +86,9 @@ class SwipeableAdapter (
             }
         }*/
         holder.itemView.setOnClickListener { view ->
-            view.findNavController().navigate(R.id.eventFragment)
+            val bundle = Bundle()
+            bundle.putSerializable("data", swipeableFeedItems[position])
+            view.findNavController().navigate(R.id.eventFragment, bundle)
         }
     }
 
